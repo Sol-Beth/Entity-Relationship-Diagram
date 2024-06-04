@@ -1,0 +1,64 @@
+Script for the Relations
+
+
+-- Create Database
+CREATE DATABASE Training;
+
+-- Change context to the database
+USE Training;
+
+-- Create the tables with Primary and Foreign Keys
+CREATE TABLE Student
+(
+	StudentID int PRIMARY KEY,
+    FirstName varchar(30),
+    LastName varchar(30),
+    EmailAddress varchar(50),
+    DateOfBirth date
+);
+
+CREATE TABLE Program
+(
+	ProgramID int PRIMARY KEY,
+    ProgramDescription varchar(50)
+);
+
+CREATE TABLE Course
+(
+	CourseID int PRIMARY KEY,
+    CourseDesciption varchar(50),
+    Capacity int,
+    ProgramID int,
+    CONSTRAINT FOREIGN KEY (ProgramID) REFERENCES Program (ProgramID)
+);
+
+CREATE TABLE StudentCourse
+(
+	StudentID int,
+    CourseID int,
+    CompletionDate date,
+    Grade decimal,
+    PRIMARY KEY (StudentID, CourseID),
+    CONSTRAINT FOREIGN KEY (StudentID) REFERENCES Student (StudentID),
+    CONSTRAINT FOREIGN KEY (CourseID) REFERENCES Course (CourseID)
+);
+
+CREATE TABLE Instructor
+(
+	InstructorID int PRIMARY KEY,
+    FirstName varchar(30),
+    LastName varchar(30),
+    EmailAddress varchar(50)
+);
+
+CREATE TABLE CourseInstructor
+(
+	CourseID int,
+    InstructorID int,
+    StartDate date,
+    PRIMARY KEY (CourseID,InstructorID),
+    CONSTRAINT FOREIGN KEY (InstructorID) REFERENCES Instructor (InstructorID),
+    CONSTRAINT FOREIGN KEY (CourseID) REFERENCES Course (CourseID)
+);
+
+
