@@ -1,0 +1,21 @@
+An entity relationship diagram is a great tool to express the data requirements of a software solution. It 
+provides a developer with the data elements that must be stored. It also provides the designer with a 
+document to discuss and verify the system requirements with the user.
+Course Learning Outcomes Evaluated in this Assignment
+- Develop a data model given a set of business requirements
+Instructions
+The following is a description of the business that will be used to develop a software application. You 
+must create an entity relationship diagram to describe the data requirements of the system.
+The Business
+The client is going to automate the inventory of their bookstore. This inventory management system is 
+eventually going to be connected to their sales system, but that is outside the scope of this exercise. 
+Here is the description of the data:
+- Each book is identified by a unique ISBN number. You can assume that this is a world-wide 
+unique number.
+- Each book can have one or more authors
+- Each book can have only one publisher
+- The following information about each book is tracked: ISBN, author(s), title, category, publisher 
+and suggested retail price
+- The following information about each author is tracked: Name, email address
+- The following information about each publisher is tracked: Name, contact name, contact email 
+address
